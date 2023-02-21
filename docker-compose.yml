@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hotreload.sample.api:
+    image: ${DOCKER_REGISTRY-}hotreloadsampleapi
+    build:
+      context: .
+      dockerfile: HotReload.Sample.API/Dockerfile

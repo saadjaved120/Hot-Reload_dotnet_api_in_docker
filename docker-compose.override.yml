@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  hotreload.sample.api:
+    build: .
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://*:443;http://*:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "5000:80"
+      - "5001:443"
+    command: ["dotnet", "watch","run", -v, "--project" , "HotReload.Sample.API/HotReload.Sample.API.csproj", "--urls", "https://*:443;http://*:80"]
+    volumes:
+      - .:/app
+      - /app/obj/ # <- directory won't be mounted
+      - /app/bin/ # <- directory won't be mounted
+      - /app/src/Fx.Offers.API/obj/ # <- directory won't be mounted
+      - /app/src/Fx.Offers.API/bin/ # <- directory won't be mounted
+      - ~/.aspnet/https:/https:ro
+      
