@@ -16,7 +16,7 @@ services:
       - .:/app
       - /app/obj/ # <- directory won't be mounted
       - /app/bin/ # <- directory won't be mounted
-      - /app/src/Fx.Offers.API/obj/ # <- directory won't be mounted
-      - /app/src/Fx.Offers.API/bin/ # <- directory won't be mounted
+      - /app/HotReload.Sample.API/obj/ # <- directory won't be mounted
+      - /app/HotReload.Sample.API/bin/ # <- directory won't be mounted
       - ~/.aspnet/https:/https:ro
       
