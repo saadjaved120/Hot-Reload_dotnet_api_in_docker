@@ -1,5 +1,5 @@
 # Hot reload dotnet app in docker
-Find details here: 
+Find details here: https://medium.com/@saadjaved120/hot-reload-dotnet-application-in-docker-using-dotnet-watch-c41662c73104
 
 ### Running application 
 Create trusted certificate on local machine by running following command individually on terminal
